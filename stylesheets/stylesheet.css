@@ -232,8 +232,6 @@ a {
 .site-footer-credits {
   color: #819198;
   font-size: 11px;
-  position: absolute;
-  right: 0px;
 }
 
 @media screen and (min-width: 64em) {
