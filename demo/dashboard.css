@@ -25,10 +25,6 @@ body {
    border:                   0;
 }
 
-#safezone{
-   fill:                     #5ea00f;
-}
-
 .safezoneline{
    stroke:                   #ffffff;
    stroke-width:             2px;

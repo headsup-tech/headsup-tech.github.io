@@ -50,7 +50,8 @@ function initDashboard() {
     $('#safezone').attr({
         'cx':      safezone_cx,
         'cy':      safezone_cy,
-        'r':       safezone_r
+        'r':       safezone_r,
+        'fill':    "#c0c0c0"
     });
     $('#linev').attr({
         'x1':      safezone_cx,
@@ -106,9 +107,13 @@ function refreshDashboard_cb(newData) {
         'cy':      safezone_cy-safezone_r*newData['radius']*Math.cos(newData['heading'])
     });
     
-    // vibrate
+    // warn if radius too large
     if (newData['radius']>1.0) {
-        window.navigator.vibrate(200);
+        $('#safezone').attr('fill',"#ff0000");
+        var audio = new Audio('sound.mp3');
+        audio.play();
+    } else {
+        $('#safezone').attr('fill',"#5ea00f");
     }
     
     // log
