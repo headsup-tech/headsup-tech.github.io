@@ -106,6 +106,11 @@ function refreshDashboard_cb(newData) {
         'cy':      safezone_cy-safezone_r*newData['radius']*Math.cos(newData['heading'])
     });
     
+    // vibrate
+    if (newData['radius']>1.0) {
+        window.navigator.vibrate(200);
+    }
+    
     // log
     console.log(newData);
 }
